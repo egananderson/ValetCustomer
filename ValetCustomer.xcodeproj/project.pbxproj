@@ -13,10 +13,10 @@
 		55A10D8E1B167AF800F008A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A10D8D1B167AF800F008A5 /* Images.xcassets */; };
 		55A10D911B167AF800F008A5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55A10D8F1B167AF800F008A5 /* LaunchScreen.xib */; };
 		55A10D9D1B167AF800F008A5 /* ValetCustomerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A10D9C1B167AF800F008A5 /* ValetCustomerTests.m */; };
-		55A10DA81B167D1600F008A5 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A10DA71B167D1600F008A5 /* Location.m */; };
-		55A10DAB1B167D2800F008A5 /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A10DAA1B167D2800F008A5 /* LocationController.m */; };
 		55A10DAE1B16821C00F008A5 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A10DAD1B16821C00F008A5 /* Customer.m */; };
 		55A10DB11B16822A00F008A5 /* CustomerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A10DB01B16822A00F008A5 /* CustomerController.m */; };
+		55A10DBC1B16859A00F008A5 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A10DB91B16859A00F008A5 /* Location.m */; };
+		55A10DBD1B16859A00F008A5 /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A10DBB1B16859A00F008A5 /* LocationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,14 +42,14 @@
 		55A10D961B167AF800F008A5 /* ValetCustomerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ValetCustomerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A10D9B1B167AF800F008A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55A10D9C1B167AF800F008A5 /* ValetCustomerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValetCustomerTests.m; sourceTree = "<group>"; };
-		55A10DA61B167D1600F008A5 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = ../Location.h; sourceTree = "<group>"; };
-		55A10DA71B167D1600F008A5 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = ../Location.m; sourceTree = "<group>"; };
-		55A10DA91B167D2800F008A5 /* LocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationController.h; path = ../LocationController.h; sourceTree = "<group>"; };
-		55A10DAA1B167D2800F008A5 /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationController.m; path = ../LocationController.m; sourceTree = "<group>"; };
 		55A10DAC1B16821C00F008A5 /* Customer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
 		55A10DAD1B16821C00F008A5 /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
 		55A10DAF1B16822A00F008A5 /* CustomerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerController.h; sourceTree = "<group>"; };
 		55A10DB01B16822A00F008A5 /* CustomerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerController.m; sourceTree = "<group>"; };
+		55A10DB81B16859A00F008A5 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		55A10DB91B16859A00F008A5 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		55A10DBA1B16859A00F008A5 /* LocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationController.h; sourceTree = "<group>"; };
+		55A10DBB1B16859A00F008A5 /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,12 +95,12 @@
 				55A10D851B167AF800F008A5 /* AppDelegate.m */,
 				55A10D871B167AF800F008A5 /* LocationFeedViewController.h */,
 				55A10D881B167AF800F008A5 /* LocationFeedViewController.m */,
-				55A10DA61B167D1600F008A5 /* Location.h */,
-				55A10DA71B167D1600F008A5 /* Location.m */,
-				55A10DA91B167D2800F008A5 /* LocationController.h */,
-				55A10DAA1B167D2800F008A5 /* LocationController.m */,
 				55A10DAC1B16821C00F008A5 /* Customer.h */,
 				55A10DAD1B16821C00F008A5 /* Customer.m */,
+				55A10DB81B16859A00F008A5 /* Location.h */,
+				55A10DB91B16859A00F008A5 /* Location.m */,
+				55A10DBA1B16859A00F008A5 /* LocationController.h */,
+				55A10DBB1B16859A00F008A5 /* LocationController.m */,
 				55A10DAF1B16822A00F008A5 /* CustomerController.h */,
 				55A10DB01B16822A00F008A5 /* CustomerController.m */,
 				55A10D8D1B167AF800F008A5 /* Images.xcassets */,
@@ -235,12 +235,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55A10DAB1B167D2800F008A5 /* LocationController.m in Sources */,
 				55A10DAE1B16821C00F008A5 /* Customer.m in Sources */,
 				55A10D891B167AF800F008A5 /* LocationFeedViewController.m in Sources */,
 				55A10D861B167AF800F008A5 /* AppDelegate.m in Sources */,
 				55A10DB11B16822A00F008A5 /* CustomerController.m in Sources */,
-				55A10DA81B167D1600F008A5 /* Location.m in Sources */,
+				55A10DBC1B16859A00F008A5 /* Location.m in Sources */,
+				55A10DBD1B16859A00F008A5 /* LocationController.m in Sources */,
 				55A10D831B167AF800F008A5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
