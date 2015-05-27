@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Egan Anderson. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LocationFeedViewController.h"
 
-@interface ViewController ()
+@interface LocationFeedViewController ()
 
 @end
 
-@implementation ViewController
+@implementation LocationFeedViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
