@@ -12,12 +12,12 @@
 @interface Location : NSObject
 
 @property (nonatomic, assign) NSInteger locationID;
-@property (nonatomic, strong) NSString *locationName;
-@property (nonatomic, strong) NSString *locationStreet;
-@property (nonatomic, strong) NSString *locationCity;
-@property (nonatomic, strong) NSString *locationState;
-@property (nonatomic, strong) NSString *locationZip;
-@property (nonatomic, strong) UIImage *locationImage;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *street;
+@property (nonatomic, strong) NSString *city;
+@property (nonatomic, strong) NSString *state;
+@property (nonatomic, strong) NSString *zip;
+@property (nonatomic, strong) UIImage *image;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

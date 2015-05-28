@@ -14,6 +14,6 @@
 @property (nonatomic, strong) Customer *customer;
 
 +(instancetype) sharedInstance;
-
+- (void)saveToDBWithCompletion:(void (^)(BOOL success))completion;
 
 @end
