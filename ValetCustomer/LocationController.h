@@ -13,5 +13,6 @@
 @property (nonatomic, strong, readonly) NSArray *locations;
 
 +(instancetype) sharedInstance;
+- (void)loadFromDatabaseWithCompletion:(void (^)(BOOL success))completion;
 
 @end
