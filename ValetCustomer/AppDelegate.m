@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LocationFeedViewController.h"
+#import "SignUpViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +23,7 @@
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[LocationFeedViewController new]];
+    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[SignUpViewController new]];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
