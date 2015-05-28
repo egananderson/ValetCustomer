@@ -11,7 +11,7 @@
 
 @interface Location : NSObject
 
-@property (nonatomic, strong) NSString *locationID;
+@property (nonatomic, assign) NSInteger locationID;
 @property (nonatomic, strong) NSString *locationName;
 @property (nonatomic, strong) NSString *locationStreet;
 @property (nonatomic, strong) NSString *locationCity;

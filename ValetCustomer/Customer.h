@@ -10,6 +10,7 @@
 
 @interface Customer : NSObject
 
+@property (nonatomic, assign) NSInteger customerID;
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;
 

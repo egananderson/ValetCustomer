@@ -48,7 +48,8 @@
 }
 
 - (void)parkHereButtonPressed{
-    if (![CustomerController sharedInstance].customer.firstName || ![CustomerController sharedInstance].customer.lastName){
+    // replace condition with (![CustomerController sharedInstance].customer.customerID && ![NonVIP sharedInstance].firstName)
+    if (![CustomerController sharedInstance].customer.customerID) {
         UIAlertController *nameInputAlert = [UIAlertController alertControllerWithTitle:@"Please enter your first and last name" message:@"This will help us identify your car" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
         [nameInputAlert addAction:cancelAction];
@@ -60,19 +61,19 @@
             
             UITextField *lastNameTextField = nameInputAlert.textFields[1];
             NSString *lastName = lastNameTextField.text;
-
+            
             
             if([[NSString stringWithFormat:@"%@", firstName] isEqualToString:@""] || [[NSString stringWithFormat:@"%@", lastName] isEqualToString:@""]){
                 [self.navigationController presentViewController:nameInputAlert animated:YES completion:nil];
             }else{
-           
+                
                 [CustomerController sharedInstance].customer.firstName = firstName;
                 [CustomerController sharedInstance].customer.lastName = lastName;
                 [self pushLockedInView];
             }
         }];
         [nameInputAlert addAction:parkHereAction];
-
+        
         [nameInputAlert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
             textField.placeholder = @"first name";
         }];
@@ -85,8 +86,6 @@
     } else {
         [self pushLockedInView];
     }
-    
-    
 }
 
 - (void)pushLockedInView {
