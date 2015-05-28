@@ -7,6 +7,8 @@
 //
 
 #import "LocationDetailViewController.h"
+#import "CustomerController.h"
+#import "RequestCarViewController.h"
 
 @interface LocationDetailViewController ()
 
@@ -37,7 +39,7 @@
     
     self.parkHereButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.parkHereButton setTitle:@"Park Here" forState:UIControlStateNormal];
-    self.parkHereButton.frame = CGRectMake(120, 500, self.view.frame.size.width - 240, 30);
+    self.parkHereButton.frame = CGRectMake(120, 470, self.view.frame.size.width - 240, 30);
     [self.parkHereButton addTarget:self action:@selector(parkHereButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.parkHereButton];
     
@@ -46,15 +48,50 @@
 }
 
 - (void)parkHereButtonPressed{
-    UIAlertController *nameInputAlert = [UIAlertController alertControllerWithTitle:@"Please enter your first and last name" message:@"We will use this information to help identify your car" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
-    [nameInputAlert addAction:cancelAction];
+    if (![CustomerController sharedInstance].customer.firstName || ![CustomerController sharedInstance].customer.lastName){
+        UIAlertController *nameInputAlert = [UIAlertController alertControllerWithTitle:@"Please enter your first and last name" message:@"This will help us identify your car" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+        [nameInputAlert addAction:cancelAction];
+        
+        UIAlertAction *parkHereAction = [UIAlertAction actionWithTitle:@"Park Here" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            
+            UITextField *firstNameTextField = nameInputAlert.textFields[0];
+            NSString *firstName = firstNameTextField.text;
+            
+            UITextField *lastNameTextField = nameInputAlert.textFields[1];
+            NSString *lastName = lastNameTextField.text;
+
+            
+            if([[NSString stringWithFormat:@"%@", firstName] isEqualToString:@""] || [[NSString stringWithFormat:@"%@", lastName] isEqualToString:@""]){
+                [self.navigationController presentViewController:nameInputAlert animated:YES completion:nil];
+            }else{
+           
+                [CustomerController sharedInstance].customer.firstName = firstName;
+                [CustomerController sharedInstance].customer.lastName = lastName;
+                [self pushLockedInView];
+            }
+        }];
+        [nameInputAlert addAction:parkHereAction];
+
+        [nameInputAlert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+            textField.placeholder = @"first name";
+        }];
+        
+        [nameInputAlert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+            textField.placeholder = @"last name";
+        }];
+        
+        [self.navigationController presentViewController:nameInputAlert animated:YES completion:nil];
+    } else {
+        [self pushLockedInView];
+    }
     
-    UIAlertAction *parkHereAction = [UIAlertAction actionWithTitle:@"Park Here" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        //check if names match
-    }];
-    [nameInputAlert addAction:parkHereAction];
-    [nameInputAlert presentViewController:nameInputAlert animated:YES completion:nil];
+    
+}
+
+- (void)pushLockedInView {
+    RequestCarViewController *requestCarViewController = [RequestCarViewController new];
+    [self.navigationController pushViewController:requestCarViewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

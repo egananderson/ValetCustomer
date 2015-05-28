@@ -20,6 +20,8 @@
 		55A10DC01B168BB100F008A5 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A10DBF1B168BB100F008A5 /* CustomTableViewCell.m */; };
 		55A10DC31B168BD800F008A5 /* LocationFeedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A10DC21B168BD800F008A5 /* LocationFeedDataSource.m */; };
 		55A10DC61B16E8A800F008A5 /* LocationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A10DC51B16E8A800F008A5 /* LocationDetailViewController.m */; };
+		55A10DC91B176F5C00F008A5 /* RequestCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A10DC81B176F5C00F008A5 /* RequestCarViewController.m */; };
+		55A10DCC1B17733100F008A5 /* PaymentInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A10DCB1B17733100F008A5 /* PaymentInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,10 @@
 		55A10DC21B168BD800F008A5 /* LocationFeedDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationFeedDataSource.m; sourceTree = "<group>"; };
 		55A10DC41B16E8A800F008A5 /* LocationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetailViewController.h; sourceTree = "<group>"; };
 		55A10DC51B16E8A800F008A5 /* LocationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailViewController.m; sourceTree = "<group>"; };
+		55A10DC71B176F5C00F008A5 /* RequestCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestCarViewController.h; sourceTree = "<group>"; };
+		55A10DC81B176F5C00F008A5 /* RequestCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestCarViewController.m; sourceTree = "<group>"; };
+		55A10DCA1B17733100F008A5 /* PaymentInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentInfoViewController.h; sourceTree = "<group>"; };
+		55A10DCB1B17733100F008A5 /* PaymentInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,10 @@
 				55A10DB01B16822A00F008A5 /* CustomerController.m */,
 				55A10DC41B16E8A800F008A5 /* LocationDetailViewController.h */,
 				55A10DC51B16E8A800F008A5 /* LocationDetailViewController.m */,
+				55A10DC71B176F5C00F008A5 /* RequestCarViewController.h */,
+				55A10DC81B176F5C00F008A5 /* RequestCarViewController.m */,
+				55A10DCA1B17733100F008A5 /* PaymentInfoViewController.h */,
+				55A10DCB1B17733100F008A5 /* PaymentInfoViewController.m */,
 				55A10D8D1B167AF800F008A5 /* Images.xcassets */,
 				55A10D8F1B167AF800F008A5 /* LaunchScreen.xib */,
 				55A10D801B167AF800F008A5 /* Supporting Files */,
@@ -255,7 +265,9 @@
 				55A10DAE1B16821C00F008A5 /* Customer.m in Sources */,
 				55A10D891B167AF800F008A5 /* LocationFeedViewController.m in Sources */,
 				55A10D861B167AF800F008A5 /* AppDelegate.m in Sources */,
+				55A10DC91B176F5C00F008A5 /* RequestCarViewController.m in Sources */,
 				55A10DB11B16822A00F008A5 /* CustomerController.m in Sources */,
+				55A10DCC1B17733100F008A5 /* PaymentInfoViewController.m in Sources */,
 				55A10DBC1B16859A00F008A5 /* Location.m in Sources */,
 				55A10DBD1B16859A00F008A5 /* LocationController.m in Sources */,
 				55A10DC01B168BB100F008A5 /* CustomTableViewCell.m in Sources */,

@@ -13,4 +13,7 @@
 
 @property (nonatomic, strong) Customer *customer;
 
++(instancetype) sharedInstance;
+
+
 @end

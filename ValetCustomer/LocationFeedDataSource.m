@@ -22,9 +22,7 @@
     cell = [tableView dequeueReusableCellWithIdentifier:[CustomTableViewCell cellID]];
     if (!cell){
         cell = [[CustomTableViewCell alloc]initWithDictionary:[LocationController sharedInstance].locations[indexPath.row] reuseIdentifier:[CustomTableViewCell cellID]];
-                                     
-                                     
-                                     //initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[CustomTableViewCell cellID]];
+
     }
     
     return cell;
