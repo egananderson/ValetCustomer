@@ -79,9 +79,9 @@
     LocationController *locationController = [LocationController sharedInstance];
     Location *location = locationController.locations[indexPath.row];
     
-    detailViewController.locationName = location.locationName;
-    detailViewController.locationStreet = location.locationStreet;
-    detailViewController.locationImage = location.locationImage;
+    detailViewController.locationName = location.name;
+    detailViewController.locationStreet = location.street;
+    detailViewController.locationImage = location.image;
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 

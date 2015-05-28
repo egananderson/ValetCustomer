@@ -26,9 +26,9 @@
     if (!cell){
         cell = [[CustomTableViewCell alloc]initWithLocation:location reuseIdentifier:[CustomTableViewCell cellID]];
     } else {
-        cell.locationNameLabel.text = location.locationName;
-        cell.locationStreetLabel.text = location.locationStreet;
-        cell.locationImageView.image = location.locationImage;
+        cell.locationNameLabel.text = location.name;
+        cell.locationStreetLabel.text = location.street;
+        cell.locationImageView.image = location.image;
     }
 
     return cell;

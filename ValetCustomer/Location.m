@@ -22,13 +22,13 @@ static NSString *ZipKey = @"zip";
     self = [super self];
     
     if (self) {
-        self.locationID = dictionary[IDKey];
-        self.locationName = dictionary[NameKey];
-        self.locationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@", dictionary[ImageKey]]];
-        self.locationStreet = dictionary[StreetKey];
-        self.locationCity = dictionary[CityKey];
-        self.locationState = dictionary[StateKey];
-        self.locationZip = dictionary[ZipKey];
+        self.locationID = [dictionary[IDKey] integerValue];
+        self.name = dictionary[NameKey];
+        self.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", dictionary[ImageKey]]];
+        self.street = dictionary[StreetKey];
+        self.city = dictionary[CityKey];
+        self.state = dictionary[StateKey];
+        self.zip = dictionary[ZipKey];
     }
     
     return self;
