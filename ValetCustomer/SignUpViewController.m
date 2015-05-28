@@ -10,6 +10,7 @@
 #import "NonVIP.h"
 #import "CustomerController.h"
 #import "PaymentSignUpViewController.h"
+#import "LocationFeedViewController.h"
 
 @interface SignUpViewController ()
 @property (nonatomic, strong) UITextField *firstNameField;
@@ -78,41 +79,43 @@
 }
 
 - (void)nextButtonPressed{
-    if (self.passwordField.text.length < 5){
+    if (self.firstNameField.text.length == 0
+        || self.lastNameField.text.length == 0
+        || self.emailField.text.length == 0) {
+        
+        UILabel *missingFieldsLabel = [[UILabel alloc]initWithFrame:CGRectMake(22, 245, self.view.frame.size.width - 40, 30)];
+        missingFieldsLabel.font = [UIFont systemFontOfSize:13];
+        missingFieldsLabel.textColor = [UIColor redColor];
+        missingFieldsLabel.text = @"All fields are required";
+        [self.view addSubview:missingFieldsLabel];
+    } else if (self.passwordField.text.length < 5) {
         self.passwordField.text = @"";
         self.passwordInstructionsLabel.textColor = [UIColor redColor];
-    } else if (self.firstNameField.text.length > 0 && self.lastNameField.text.length > 0 && self.emailField.text.length > 0){
-        Customer *customer = [CustomerController sharedInstance].customer;
+    } else {
+        CustomerController *customerController = [CustomerController sharedInstance];
+        
+        Customer *customer = customerController.customer;
         customer.firstName = self.firstNameField.text;
         customer.lastName = self.lastNameField.text;
         customer.email = self.emailField.text;
         customer.password = self.passwordField.text;
         
+        self.passwordInstructionsLabel.textColor = [UIColor grayColor];
+        
         PaymentSignUpViewController *paymentSignUpViewController = [PaymentSignUpViewController new];
-        [self.navigationController presentViewController:paymentSignUpViewController animated:YES completion:nil];
+        //LocationFeedViewController *locationFeed = [[LocationFeedViewController alloc] init];
         
-        self.passwordInstructionsLabel.textColor = [UIColor grayColor];
-    }
-    if ((self.firstNameField.text.length == 0 || self.lastNameField.text.length == 0 || self.emailField.text.length == 0) && (self.passwordField.text.length < 5)){
-        UILabel *missingFieldsLabel = [[UILabel alloc]initWithFrame:CGRectMake(22, 245, self.view.frame.size.width - 40, 30)];
-        missingFieldsLabel.font = [UIFont systemFontOfSize:13];
-        missingFieldsLabel.textColor = [UIColor redColor];
-        missingFieldsLabel.text = @"All fields are required";
-        [self.view addSubview:missingFieldsLabel];
-        
-        self.passwordField.text = @"";
-        self.passwordInstructionsLabel.textColor = [UIColor redColor];
-    } else if (self.firstNameField.text.length == 0 || self.lastNameField.text.length == 0 || self.emailField.text.length == 0){
-        UILabel *missingFieldsLabel = [[UILabel alloc]initWithFrame:CGRectMake(22, 245, self.view.frame.size.width - 40, 30)];
-        missingFieldsLabel.font = [UIFont systemFontOfSize:13];
-        missingFieldsLabel.textColor = [UIColor redColor];
-        missingFieldsLabel.text = @"All fields are required";
-        [self.view addSubview:missingFieldsLabel];
-        
-        self.passwordInstructionsLabel.textColor = [UIColor grayColor];
-    } else {
-        self.passwordField.text = @"";
-        self.passwordInstructionsLabel.textColor = [UIColor redColor];
+        [customerController saveToDBWithCompletion:^(BOOL success) {
+            if (success) {
+                NSLog(@"did this much");
+                //[self.navigationController presentViewController:paymentSignUpViewController animated:YES completion:nil];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.navigationController pushViewController:paymentSignUpViewController animated:YES];
+                });
+            } else {
+                NSLog(@"ERROR SAVING CUSTOMER INFO TO DB");
+            }
+        }];
     }
 }
 
@@ -120,15 +123,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -45,15 +45,20 @@
         if (data.length > 0 && error == nil) {
             NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             
+            NSLog(@"%@", responseDict);
             NSString *returnCode = [[responseDict objectForKey:@"returnCode"] stringValue];
+            NSLog(@"%@", returnCode);
             
-            if ( [returnCode isEqualToString: @"10"] ) {
+            if ([returnCode isEqualToString: @"10"] ) {
                 NSLog(@"Worked");
                 NSInteger customerIDReturned = [[responseDict objectForKey:@"id"] integerValue];
                 self.customer.customerID = customerIDReturned;
+                completion(YES);
             } else {
                 NSLog(@"Didn't work");
             }
+        } else {
+            completion(NO);
         }
     }];
     
