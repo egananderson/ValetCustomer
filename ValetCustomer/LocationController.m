@@ -7,6 +7,7 @@
 //
 
 #import "LocationController.h"
+@import UIKit;
 
 @interface LocationController ()
 
@@ -22,8 +23,10 @@
     dispatch_once(&onceToken, ^{
         sharedInstance = [[LocationController alloc]init];
         
-        sharedInstance.locations = @[@{}];
-        
+        sharedInstance.locations = @[
+                                     @{@"locationName": @"PF Chang's", @"locationImage": [UIImage imageNamed:@"pfChangs"], @"locationStreet": @"300 South 200 West"},
+                                     @{@"locationName": @"City Creek", @"locationImage": [UIImage imageNamed:@"cityCreek"], @"locationStreet": @"65 Regent St."},
+                                     @{@"locationName": @"Station Park", @"locationImage": [UIImage imageNamed:@"stationPark"], @"locationStreet": @"320 North Station Parkway"}];
         
     });
     
