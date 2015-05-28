@@ -18,13 +18,19 @@
 @implementation LocationFeedDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    CustomTableViewCell *cell;
-    cell = [tableView dequeueReusableCellWithIdentifier:[CustomTableViewCell cellID]];
-    if (!cell){
-        cell = [[CustomTableViewCell alloc]initWithDictionary:[LocationController sharedInstance].locations[indexPath.row] reuseIdentifier:[CustomTableViewCell cellID]];
-
-    }
+    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[CustomTableViewCell cellID]];
     
+    LocationController *locationController = [LocationController sharedInstance];
+    Location *location = [locationController locations][indexPath.row];
+    
+    if (!cell){
+        cell = [[CustomTableViewCell alloc]initWithLocation:location reuseIdentifier:[CustomTableViewCell cellID]];
+    } else {
+        cell.locationNameLabel.text = location.locationName;
+        cell.locationStreetLabel.text = location.locationStreet;
+        cell.locationImageView.image = location.locationImage;
+    }
+
     return cell;
 }
 

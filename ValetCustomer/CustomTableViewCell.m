@@ -7,7 +7,6 @@
 //
 
 #import "CustomTableViewCell.h"
-#import "LocationController.h"
 
 @implementation CustomTableViewCell
 
@@ -25,24 +24,21 @@
     return @"cellID";
 }
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary reuseIdentifier:(NSString *)reuseIdentifier{
+- (instancetype)initWithLocation:(Location *)location reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     if (self) {
-//        self.locationName = dictionary[@"locationName"];
-//        self.locationImage = dictionary[@"locationImage"];
-//        self.locationStreet = dictionary[@"locationStreet"];
         
         self.locationNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 250, 200, 30)];
-        self.locationNameLabel.text = dictionary[@"locationName"];
+        self.locationNameLabel.text = location.locationName;
         self.locationNameLabel.font = [UIFont systemFontOfSize:20];
         [self addSubview:self.locationNameLabel];
     
-        self.locationImageView = [[UIImageView alloc]initWithImage:dictionary[@"locationImage"]];
+        self.locationImageView = [[UIImageView alloc]initWithImage:location.locationImage];
         self.locationImageView.frame = CGRectMake(0, 0, 375, 250);
         [self addSubview:self.locationImageView];
         
         self.locationStreetLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 270, 200, 30)];
-        self.locationStreetLabel.text = dictionary[@"locationStreet"];
+        self.locationStreetLabel.text = location.locationStreet;
         self.locationStreetLabel.font = [UIFont systemFontOfSize:13];
         self.locationStreetLabel.textColor = [UIColor grayColor];
         [self addSubview:self.locationStreetLabel];

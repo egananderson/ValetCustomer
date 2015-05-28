@@ -42,6 +42,19 @@
     self.searchBar.delegate = self;
   //  self.navigationController.navigationController.navigationItem.titleView = self.searchBar;
     [self.view addSubview:self.searchBar];
+    
+    [[LocationController sharedInstance] loadFromDatabaseWithCompletion:^(BOOL success) {
+        if (success) {
+            
+            //Updating UI must occur on main thread
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
+            
+        } else {
+            NSLog(@"ERROR LOADING FROM DATABASE");
+        }
+    }];
 
 }
 
@@ -64,11 +77,11 @@
     LocationDetailViewController *detailViewController = [LocationDetailViewController new];
     
     LocationController *locationController = [LocationController sharedInstance];
-//    Location *movie = movieController.resultMovies[indexPath.row];
+    Location *location = locationController.locations[indexPath.row];
     
-    detailViewController.locationName = locationController.locations[indexPath.row][@"locationName"];
-    detailViewController.locationStreet = locationController.locations[indexPath.row][@"locationStreet"];
-    detailViewController.locationImage = locationController.locations[indexPath.row][@"locationImage"];
+    detailViewController.locationName = location.locationName;
+    detailViewController.locationStreet = location.locationStreet;
+    detailViewController.locationImage = location.locationImage;
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 

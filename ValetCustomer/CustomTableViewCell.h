@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocationController.h"
 
 @interface CustomTableViewCell : UITableViewCell
 
@@ -16,6 +17,6 @@
 
 + (NSString *)cellID;
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary reuseIdentifier:(NSString *)reuseIdentifier;
+- (instancetype)initWithLocation:(Location *)location reuseIdentifier:(NSString *)reuseIdentifier;
 
 @end

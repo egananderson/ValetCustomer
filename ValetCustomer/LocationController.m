@@ -7,7 +7,6 @@
 //
 
 #import "LocationController.h"
-#import "Location.h"
 
 @interface LocationController ()
 
@@ -22,9 +21,6 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[LocationController alloc]init];
-        
-        sharedInstance.locations = @[@{}];
-        
     });
     
     return sharedInstance;
