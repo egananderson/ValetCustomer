@@ -37,7 +37,7 @@
     nonVIP.firstName = @"Taylor";
     nonVIP.lastName = @"Mott";
     
-    self.firstNameField = [[UITextField alloc]initWithFrame:CGRectMake(20, 80, self.view.frame.size.width - 40, 30)];
+    self.firstNameField = [[UITextField alloc]initWithFrame:CGRectMake(20, 80, self.view.frame.size.width - 40, 40)];
     self.firstNameField.borderStyle = UITextBorderStyleRoundedRect;
     self.firstNameField.placeholder = @"First Name";
     
@@ -47,7 +47,7 @@
     
     [self.view addSubview:self.firstNameField];
     
-    self.lastNameField = [[UITextField alloc]initWithFrame:CGRectMake(20, 120, self.view.frame.size.width - 40, 30)];
+    self.lastNameField = [[UITextField alloc]initWithFrame:CGRectMake(20, 130, self.view.frame.size.width - 40, 40)];
     self.lastNameField.borderStyle = UITextBorderStyleRoundedRect;
     self.lastNameField.placeholder = @"Last Name";
     
@@ -57,22 +57,29 @@
     
     [self.view addSubview:self.lastNameField];
     
-    self.emailField = [[UITextField alloc]initWithFrame:CGRectMake(20, 160, self.view.frame.size.width - 40, 30)];
+    self.emailField = [[UITextField alloc]initWithFrame:CGRectMake(20, 180, self.view.frame.size.width - 40, 40)];
     self.emailField.borderStyle = UITextBorderStyleRoundedRect;
     self.emailField.placeholder = @"Email";
     [self.view addSubview:self.emailField];
     
-    self.passwordField = [[UITextField alloc]initWithFrame:CGRectMake(20, 200, self.view.frame.size.width - 40, 30)];
+    self.passwordField = [[UITextField alloc]initWithFrame:CGRectMake(20, 230, self.view.frame.size.width - 40, 40)];
     self.passwordField.borderStyle = UITextBorderStyleRoundedRect;
     self.passwordField.placeholder = @"Password";
     self.passwordField.secureTextEntry = YES;
     [self.view addSubview:self.passwordField];
     
-    self.passwordInstructionsLabel = [[UILabel alloc]initWithFrame:CGRectMake(22, 225, self.view.frame.size.width - 40, 30)];
+    self.passwordInstructionsLabel = [[UILabel alloc]initWithFrame:CGRectMake(22, 265, self.view.frame.size.width - 40, 30)];
     self.passwordInstructionsLabel.font = [UIFont systemFontOfSize:13];
     self.passwordInstructionsLabel.textColor = [UIColor grayColor];
     self.passwordInstructionsLabel.text = @"Your password must contain at least 5 characters";
     [self.view addSubview:self.passwordInstructionsLabel];
+    
+    UIButton *signUpButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    signUpButton.frame = CGRectMake(20, 305, self.view.frame.size.width - 40, 40);
+    [signUpButton setTitle:@"Sign Up" forState:UIControlStateNormal];
+    [signUpButton addTarget:self action:@selector(nextButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    signUpButton.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:signUpButton];
 
    
 }

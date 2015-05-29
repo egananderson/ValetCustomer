@@ -23,7 +23,7 @@
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[SignUpViewController new]];
+    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[LocationFeedViewController new]];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

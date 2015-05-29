@@ -12,6 +12,7 @@
 @interface LocationController : NSObject
 
 @property (nonatomic, strong, readonly) NSArray *locations;
+@property (nonatomic, strong) NSArray *placemarks;
 
 +(instancetype) sharedInstance;
 - (void)loadFromDatabaseWithCompletion:(void (^)(BOOL success))completion;

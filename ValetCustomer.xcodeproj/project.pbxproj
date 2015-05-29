@@ -25,6 +25,12 @@
 		55B4C8041B17AAA6003B3058 /* NonVIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B4C8031B17AAA6003B3058 /* NonVIP.m */; };
 		55B4C8071B17ABCC003B3058 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B4C8061B17ABCC003B3058 /* SignUpViewController.m */; };
 		55B4C80A1B17C477003B3058 /* PaymentSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B4C8091B17C477003B3058 /* PaymentSignUpViewController.m */; };
+		55B4C8151B17F216003B3058 /* LogInDockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B4C8141B17F216003B3058 /* LogInDockViewController.m */; };
+		55B4C8181B17F497003B3058 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B4C8171B17F497003B3058 /* LogInViewController.m */; };
+		55B4C81B1B18BD9F003B3058 /* PaymentInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B4C81A1B18BD9F003B3058 /* PaymentInfo.m */; };
+		55B4C81E1B18BDB8003B3058 /* PaymentInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B4C81D1B18BDB8003B3058 /* PaymentInfoController.m */; };
+		55B4C8201B18DB3C003B3058 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B4C81F1B18DB3C003B3058 /* CoreLocation.framework */; };
+		55B4C8221B18F5AB003B3058 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B4C8211B18F5AB003B3058 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +80,16 @@
 		55B4C8061B17ABCC003B3058 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		55B4C8081B17C477003B3058 /* PaymentSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentSignUpViewController.h; sourceTree = "<group>"; };
 		55B4C8091B17C477003B3058 /* PaymentSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentSignUpViewController.m; sourceTree = "<group>"; };
+		55B4C8131B17F216003B3058 /* LogInDockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogInDockViewController.h; path = ../LogInDockViewController.h; sourceTree = "<group>"; };
+		55B4C8141B17F216003B3058 /* LogInDockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogInDockViewController.m; path = ../LogInDockViewController.m; sourceTree = "<group>"; };
+		55B4C8161B17F497003B3058 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		55B4C8171B17F497003B3058 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		55B4C8191B18BD9F003B3058 /* PaymentInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentInfo.h; sourceTree = "<group>"; };
+		55B4C81A1B18BD9F003B3058 /* PaymentInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentInfo.m; sourceTree = "<group>"; };
+		55B4C81C1B18BDB8003B3058 /* PaymentInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentInfoController.h; sourceTree = "<group>"; };
+		55B4C81D1B18BDB8003B3058 /* PaymentInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentInfoController.m; sourceTree = "<group>"; };
+		55B4C81F1B18DB3C003B3058 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		55B4C8211B18F5AB003B3058 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55B4C8221B18F5AB003B3058 /* MapKit.framework in Frameworks */,
+				55B4C8201B18DB3C003B3058 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +118,8 @@
 				55A10D7F1B167AF800F008A5 /* ValetCustomer */,
 				55A10D991B167AF800F008A5 /* ValetCustomerTests */,
 				55A10D7E1B167AF800F008A5 /* Products */,
+				55B4C8211B18F5AB003B3058 /* MapKit.framework */,
+				55B4C81F1B18DB3C003B3058 /* CoreLocation.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +143,10 @@
 				55A10DBF1B168BB100F008A5 /* CustomTableViewCell.m */,
 				55A10DC11B168BD800F008A5 /* LocationFeedDataSource.h */,
 				55A10DC21B168BD800F008A5 /* LocationFeedDataSource.m */,
+				55B4C8131B17F216003B3058 /* LogInDockViewController.h */,
+				55B4C8141B17F216003B3058 /* LogInDockViewController.m */,
+				55B4C8161B17F497003B3058 /* LogInViewController.h */,
+				55B4C8171B17F497003B3058 /* LogInViewController.m */,
 				55A10DB81B16859A00F008A5 /* Location.h */,
 				55A10DB91B16859A00F008A5 /* Location.m */,
 				55A10DBA1B16859A00F008A5 /* LocationController.h */,
@@ -133,6 +157,10 @@
 				55A10DB01B16822A00F008A5 /* CustomerController.m */,
 				55B4C8021B17AAA6003B3058 /* NonVIP.h */,
 				55B4C8031B17AAA6003B3058 /* NonVIP.m */,
+				55B4C8191B18BD9F003B3058 /* PaymentInfo.h */,
+				55B4C81A1B18BD9F003B3058 /* PaymentInfo.m */,
+				55B4C81C1B18BDB8003B3058 /* PaymentInfoController.h */,
+				55B4C81D1B18BDB8003B3058 /* PaymentInfoController.m */,
 				55B4C8051B17ABCC003B3058 /* SignUpViewController.h */,
 				55B4C8061B17ABCC003B3058 /* SignUpViewController.m */,
 				55B4C8081B17C477003B3058 /* PaymentSignUpViewController.h */,
@@ -283,6 +311,10 @@
 				55A10D891B167AF800F008A5 /* LocationFeedViewController.m in Sources */,
 				55A10D861B167AF800F008A5 /* AppDelegate.m in Sources */,
 				55A10DC91B176F5C00F008A5 /* RequestCarViewController.m in Sources */,
+				55B4C8181B17F497003B3058 /* LogInViewController.m in Sources */,
+				55B4C81E1B18BDB8003B3058 /* PaymentInfoController.m in Sources */,
+				55B4C8151B17F216003B3058 /* LogInDockViewController.m in Sources */,
+				55B4C81B1B18BD9F003B3058 /* PaymentInfo.m in Sources */,
 				55A10DB11B16822A00F008A5 /* CustomerController.m in Sources */,
 				55A10DCC1B17733100F008A5 /* PaymentInfoViewController.m in Sources */,
 				55A10DBC1B16859A00F008A5 /* Location.m in Sources */,

@@ -10,6 +10,7 @@
 #import "LocationFeedDataSource.h"
 #import "LocationDetailViewController.h"
 #import "LocationController.h"
+#import "LogInDockViewController.h"
 
 @interface LocationFeedViewController () <UITableViewDelegate, UISearchBarDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -24,24 +25,33 @@
     
     [super viewDidLoad];
     
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, -44, self.view.frame.size.width, self.view.frame.size.height + 44) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.dataSource = [LocationFeedDataSource new];
     self.tableView.dataSource = self.dataSource;
     [self.view addSubview:self.tableView];
     
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
-    self.navigationController.navigationBar.translucent = YES;
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+//    self.navigationController.navigationBar.shadowImage = [UIImage new];
+//    self.navigationController.navigationBar.translucent = YES;
     
-    UIView *whiteRectangle = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
-    whiteRectangle.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:whiteRectangle];
+//    UIView *whiteRectangle = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
+//    whiteRectangle.backgroundColor = [UIColor whiteColor];
+//    [self.view addSubview:whiteRectangle];
    
-    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(30, 50, self.view.frame.size.width - 60, 30)];
+    UIImage *profile = [UIImage imageNamed:@"profile"];
+    UIBarButtonItem *profileButton = [[UIBarButtonItem alloc]initWithImage:[self imageWithImage:profile convertToSize:CGSizeMake(30, 30)] style:UIBarButtonItemStylePlain target:self action:@selector(pushLogInDockView)];
+    self.navigationItem.rightBarButtonItem = profileButton;
+    
+//    UIImage *search = [UIImage imageNamed:@"search"];
+//    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc]initWithImage:[self imageWithImage:search convertToSize:CGSizeMake(30, 30)] style:UIBarButtonItemStylePlain target:self action:nil];
+//    self.navigationItem.leftBarButtonItem = searchButton;
+    
+    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width - 100, 30)];
     self.searchBar.delegate = self;
   //  self.navigationController.navigationController.navigationItem.titleView = self.searchBar;
-    [self.view addSubview:self.searchBar];
+//    [self.view addSubview:self.searchBar];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.searchBar];
     
     [[LocationController sharedInstance] loadFromDatabaseWithCompletion:^(BOOL success) {
         if (success) {
@@ -58,6 +68,14 @@
 
 }
 
+- (UIImage *)imageWithImage:(UIImage *)image convertToSize:(CGSize)size {
+    UIGraphicsBeginImageContext(size);
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *destImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return destImage;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -68,6 +86,10 @@
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self.searchBar resignFirstResponder];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
     [self.searchBar resignFirstResponder];
 }
 
@@ -83,6 +105,11 @@
     detailViewController.locationStreet = location.street;
     detailViewController.locationImage = location.image;
     [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+- (void)pushLogInDockView{
+    LogInDockViewController *logInDockViewController = [LogInDockViewController new];
+    [self.navigationController pushViewController:logInDockViewController animated:YES];
 }
 
 
